@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: #111;
+    }
+    </style>
+
+
+<body>
+
+    <ul>
+        <li><a class="home" href="file:///C:/Users/Hinge/Desktop/New_Homepage.html">HomePage</a></li>
+        <li><a href="file:///C:/Users/Hinge/Desktop/studentloans_new.html">Student Loans</a></li>
+        <li><a href="file:///C:/Users/Hinge/Desktop/education_new.html">Education</a></li>
+      </ul>
+
+<h1 align="center">My Monthly Budget</h1>
+
+<div align="center" id="piechart"></div>
+
+<script align="center" type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script align="center" type="text/javascript">
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Categories', 'Spending'],
+  ['Housing', 900],
+  ['Gas/ Transportation', 200],
+  ['Groceries/ Eating Out', 150],
+  ['Other', 200]
+]);
+
+ 
+  var options = {'title':'Categories', 'width':1450, 'height':900};
+
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>
+

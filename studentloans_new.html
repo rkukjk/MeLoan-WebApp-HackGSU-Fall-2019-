@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Student Loan Data </title>
+    <style>
+        body {
+            background-color: #90ee90;
+        }
+       
+        #calc {
+                background: #fff;
+                padding: 0px 30px 30px;
+                box-shadow: 
+                    0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+                    0px 4px 20px rgba( 0,0,0,0.33 );
+        }
+
+         .inputs {
+                margin-top: 25px;                
+        }
+
+        .padding{
+            padding-left: 175px;
+        }
+
+         .sep {
+                height: 2px;
+                background: #FCE47C;
+                font-weight: 300;
+                width: 1500px;
+                margin: 0px -30px;
+        }
+        .centered{
+            text-align: center;
+            font-size: 30px;
+        }
+        .amount{
+            padding-left: 530px;
+        }
+        .loans{
+            padding-left: 300px;
+        }
+        ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+        li {
+      float: left;
+     }
+    
+        li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+        }
+    
+        li a:hover {
+      background-color: #111;
+        }
+        
+    </style>
+</head>
+<body>
+        <ul>
+                <li><a class="home" href="file:///C:/Users/Hinge/Desktop/New_Homepage.html">HomePage</a></li>
+                <li><a href="file:///C:/Users/Hinge/Desktop/budget_new.html">Budget</a></li>
+                <li><a href="file:///C:/Users/Hinge/Desktop/education_new.html">Education</a></li>
+              </ul>
+    <h1><center>Student Loan Debts</center></h1><br><br>
+        <form name = "calc">
+            <div class = loans>
+                    Subsidized Loans: <input type = "text" name = "txtnum1">
+                    Unsubsidized Loans: <input type = "text" name = "txtnum2">
+                    Private Loans: <input type = "text" name = "txtnum3"><br><br>
+                </div>
+                <div class= sep></div>
+                <div class = centered>   
+                    <br><b>Days</b><br><br>
+                </div>
+            <div class = padding>
+                After Grace Period: <input type = "text" name = "txtnum4">
+                Since Unsubsidized Disbursement: <input type = "text" name = "txtnum5"> 
+                Since Private Disbursement: <input type = "text" name = "txtnum6"><br><br> 
+            </div>
+            <div class = amount>
+                Amount: <input type = "text" name = "txtres"><br><br>
+            </div>
+            </div>
+    
+            <div class = centered>
+                <input type = "button" value = "Calculate" onclick="compute()">
+            </div>
+        </form>
+    </form>
+    </fieldset>
+    <script type = "text/javascript">
+        function compute(){
+            var num1, num2, res;
+            num1 = Number(document.calc.txtnum1.value);
+            num2 = Number(document.calc.txtnum2.value);
+            num3 = Number(document.calc.txtnum3.value);
+            num4 = Number(document.calc.txtnum4.value);
+            num5 = Number(document.calc.txtnum5.value);
+            num6 = Number(document.calc.txtnum6.value);
+            i_1 = 4.53/100
+            i_2 = 6.8/100
+            i_3 = 7.3225/100
+            growth_1 = (1+(i_1/365))**num4
+            growth_2 = (1+(i_2/365))**num5
+            growth_3 = (1+(i_3/365))**num6 
+            num1 = num1 * growth_1
+            num2 = num2 * growth_2
+            num3 = num3 * growth_3
+            result = num1 + num2 + num3;
+            var num7 = result;
+            var num8 = num7.toFixed(2)
+            document.calc.txtres.value = num8;
+ 
+
+        }
+
+        
+
+    </script>
+    </body>
+    </html>
